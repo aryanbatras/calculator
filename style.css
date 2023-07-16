@@ -20,17 +20,10 @@ html,body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    
+    background-color: darkkhaki;
+    border-radius: 18px 36px;
 
-
-    width: 480px;
-    height: 600px;
-    background-color: darkgrey;
-
-    border: 2px solid grey;
-    border-radius: 18px 32px;
-
-    box-shadow: 2px 2px darkgreen;
 }
 
 .display-border {
@@ -38,17 +31,15 @@ html,body {
     justify-content: center;
     align-items: center;
 
-    border: 2px solid grey;
-    border-radius: 18px 32px;
+    border-radius: 26px 26px;
 
-    box-shadow: 4px 4px darkolivegreen;
+    box-shadow: 2px 2px darkgrey;
 
-    background-color: grey;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    background-color: darkkhaki;
 
-    width: 450px;
-    height: 120px;
+    margin: 12px 0px;
+
+    opacity: 0.8;
 }
 
 .display-green {
@@ -56,18 +47,15 @@ html,body {
     justify-content: center;
     align-items: center;
 
-    border: 2px solid lightgreen;
-    border-radius: 18px 32px;
+    border-radius: 32px 32px;
 
-    box-shadow: 4px 4px green;
+
+    box-shadow: 2px 2px darkgrey;
 
     background-color: lightgreen;
-    margin: 8px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    width: 420px;
-    height: 60px;
+    
+    padding: 18px 120px;
+    margin: 8px 12px;
 }
 
 
@@ -76,18 +64,23 @@ html,body {
     flex-grow: 2;
     display: flex;
     flex-direction: column;
-    
-    margin: 8px;
+    background-color: darkkhaki;
 
-    border: 2px solid grey;
-    border-radius: 18px 32px;
+    margin: 4px;
+    padding: 12px;
+
+    border-radius: 18px 36px;
     border-bottom: 0px;
     border-right: 0px;
 
-    box-shadow: 4px 4px darkolivegreen;
+    box-shadow: 2px 2px darkolivegreen;
+    opacity: 0.8;
 
-    width: 450px;
-    height: auto;
+}
+
+.buttons-border:hover {
+    transition: 2s;
+    opacity: 1;
 }
 
 
@@ -114,10 +107,10 @@ html,body {
 
 .button:hover {
     opacity: 1;
-    transition: 0.6s;
     box-shadow: 0px 2px darkolivegreen;
     transform: rotateX(45deg);
     transform: translateY(2px);
+    transition: 0.2s;
 }
 
 .button:active {
@@ -144,12 +137,11 @@ html,body {
         margin: 10px;
         padding: 2px;
 
-        box-shadow: 4px 4px grey;
 }
 
 .button-outer:active {
     box-shadow: 0px 0px;
-    transform: 0.2s;
+
 }
 
 .black {
@@ -168,3 +160,4 @@ html,body {
 .dot {
     padding: 12px 18px;
 }
+
