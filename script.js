@@ -71,30 +71,23 @@ zero.addEventListener('click', function() {
     display.textContent += 0;
 });
 
-// cal display 
-let operator = 0;
+// fns
 
-let valueone = 0;
-plus.addEventListener('click', function() {
-    operator = '+';
-    sign.textContent = '+';
-
+function plusfn() {
     if(valueone !== 0){
         valueone = +valueone + +display.textContent;
         display.textContent = '';
+        console.log(valueone);
+        console.log(operator);
     } else {
     valueone = display.textContent;
     display.textContent = '';
-
-    
+    console.log(valueone);
+    console.log(operator);
 }
-});
+}
 
-minus.addEventListener('click', function() {
-      operator = '-';
-      sign.textContent = '-';
-
-
+function minusfn() {
     if(valueone !== 0){
         valueone = +valueone - +display.textContent;
         display.textContent = '';
@@ -102,27 +95,9 @@ minus.addEventListener('click', function() {
     valueone = display.textContent;
     display.textContent = '';
 }
-});
-
-divide.addEventListener('click', function() {
-    operator = '/';
-    sign.textContent = '/';
-
-
-    if(valueone !== 0){
-        valueone = +valueone / +display.textContent;
-        display.textContent = '';
-    } else {
-    valueone = display.textContent;
-    display.textContent = '';
 }
-});
 
-multiply.addEventListener('click', function() {
-    operator = '*';
-    sign.textContent = '*';
-
-
+function mulfn() {
     if(valueone !== 0){
         valueone = +valueone * +display.textContent;
         display.textContent = '';
@@ -130,14 +105,19 @@ multiply.addEventListener('click', function() {
     valueone = display.textContent;
     display.textContent = '';
     }
+}
 
-});
+function divfn() {
+    if(valueone !== 0){
+        valueone = +valueone / +display.textContent;
+        display.textContent = '';
+    } else {
+    valueone = display.textContent;
+    display.textContent = '';
+}
+}
 
-power.addEventListener('click', function() {
-    operator = '^';
-    sign.textContent = '^';
-
-
+function powfn() {
     if(valueone !== 0){
         valueone = powvalue();
         display.textContent = '';
@@ -145,13 +125,9 @@ power.addEventListener('click', function() {
     valueone = display.textContent;
     display.textContent = '';
     }
-});
+}
 
-factorial.addEventListener('click', function() {
-    operator = '!';
-    sign.textContent = '!';
-
-
+function factorialfn() {
     if(valueone !== 0){
         valueone = factorialvalue();
         display.textContent = '';
@@ -159,27 +135,189 @@ factorial.addEventListener('click', function() {
         valueone = display.textContent;
         display.textContent = '';
     }
+}
+// cal display 
+let operator = 0;
+let valueone = 0;
+
+plus.addEventListener('click', function() {
+    
+    if(operator === 0 || operator === '+') {
+    operator = '+';
+    sign.textContent = '+';
+    plusfn();
+    } else if(operator === '-'){
+        operator = '+';
+        minusfn();
+    } else if(operator === '*'){
+        operator = "+";
+        mulfn();
+    } else if (operator === '/'){
+        operator = '+';
+        divfn();
+    } else if (operator === '^'){
+        operator = '+';
+        powfn();
+    } else if (operator === '!'){
+        operator = '+';
+        factorialfn();    
+    }
+
 });
+
+minus.addEventListener('click', function() {
+    
+    if(operator === 0 || operator === '-') {
+        operator = '-';
+        sign.textContent = '-';
+        minusfn();
+        } else if(operator === '+'){
+            operator = '-';
+            plusfn();
+        } else if(operator === '*'){
+            operator = "-";
+            mulfn();
+        } else if (operator === '/'){
+            operator = '-';
+            divfn();
+        } else if (operator === '^'){
+            operator = '-';
+            powfn();
+        } else if (operator === '!'){
+            operator = '-';
+            factorialfn();    
+        }
+    
+
+});
+
+divide.addEventListener('click', function() {
+
+    if(operator === 0 || operator === '/') {
+        operator = '/';
+        sign.textContent = '/';
+        divfn();
+        } else if(operator === '-'){
+            operator = '/';
+            minusfn();
+        } else if(operator === '*'){
+            operator = "/";
+            mulfn();
+        } else if (operator === '+'){
+            operator = '/';
+            plusfn();
+        } else if (operator === '^'){
+            operator = '/';
+            powfn();
+        } else if (operator === '!'){
+            operator = '/';
+            factorialfn();    
+        }
+    
+
+});
+
+multiply.addEventListener('click', function() {
+
+    if(operator === 0 || operator === '*') {
+        operator = '*';
+        sign.textContent = '*';
+        mulfn();
+        } else if(operator === '-'){
+            operator = '*';
+            minusfn();
+        } else if(operator === '+'){
+            operator = "*";
+            plusfn();
+        } else if (operator === '/'){
+            operator = '*';
+            divfn();
+        } else if (operator === '^'){
+            operator = '*';
+            powfn();
+        } else if (operator === '!'){
+            operator = '*';
+            factorialfn();    
+        }
+    
+});
+
+
+// other cal 
+
+power.addEventListener('click', function() {
+
+    if(operator === 0 || operator === '^') {
+        operator = '^';
+        sign.textContent = '^';
+        powfn();
+        } else if(operator === '-'){
+            operator = '^';
+            minusfn();
+        } else if(operator === '*'){
+            operator = "^";
+            mulfn();
+        } else if (operator === '/'){
+            operator = '^';
+            divfn();
+        } else if (operator === '+'){
+            operator = '^';
+            plusfn();
+        } else if (operator === '!'){
+            operator = '^';
+            factorialfn();    
+        }
+    
+
+});
+
+factorial.addEventListener('click', function() {
+
+    if(operator === 0 || operator === '!') {
+        operator = '!';
+        sign.textContent = '!';
+        factorialfn();
+        } else if(operator === '-'){
+            operator = '!';
+            minusfn();
+        } else if(operator === '*'){
+            operator = "!";
+            mulfn();
+        } else if (operator === '/'){
+            operator = '!';
+            divfn();
+        } else if (operator === '^'){
+            operator = '!';
+            powfn();
+        } else if (operator === '+'){
+            operator = '!';
+            plusfn();    
+        }
+    
+});
+
+
+// special btns
 
 dot.addEventListener('click', function() {
     display.textContent += '.';
 });
 
-// special btns
 let valuetwo = 0;
 equal.addEventListener('click', function() {
     if(valueone === 0) {
         display.textContent;
+    } else if ( display.tetContent = '') {
+        display.textContent = valueone;
     } else {
     valuetwo = display.textContent;
     display.textContent = '';
     display.textContent = operate();
     valueone = 0;
     valuetwo = 0;
-    operator = 0;
+    operator = 0; 
     }
 });
-
 
 clear.addEventListener('click', function() {
    display.textContent = display.textContent.toString().slice(0, -1);
@@ -201,7 +339,7 @@ display.addEventListener('click', function() {
 });
 
 
-// 
+// operation fns
 
 function operate() {
 if(operator === '+') {
@@ -249,6 +387,8 @@ function fac(){
 }
 
 
+// other fns
+
 function powvalue() {
     let powval = 1;
         for (i = 0; i < +display.textContent; i++)
@@ -267,3 +407,5 @@ function factorialvalue() {
     }
     return value;
 }
+
+
