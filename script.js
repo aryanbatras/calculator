@@ -148,18 +148,23 @@ plus.addEventListener('click', function() {
     plusfn();
     } else if(operator === '-'){
         operator = '+';
+        sign.textContent = '+';
         minusfn();
     } else if(operator === '*'){
         operator = "+";
+        sign.textContent = '+';
         mulfn();
     } else if (operator === '/'){
         operator = '+';
+        sign.textContent = '+';
         divfn();
     } else if (operator === '^'){
         operator = '+';
+        sign.textContent = '+';
         powfn();
     } else if (operator === '!'){
         operator = '+';
+        sign.textContent = '+';
         factorialfn();    
     }
 
@@ -173,18 +178,23 @@ minus.addEventListener('click', function() {
         minusfn();
         } else if(operator === '+'){
             operator = '-';
+            sign.textContent = '-';
             plusfn();
         } else if(operator === '*'){
             operator = "-";
+            sign.textContent = '-';
             mulfn();
         } else if (operator === '/'){
             operator = '-';
+            sign.textContent = '-';
             divfn();
         } else if (operator === '^'){
             operator = '-';
+            sign.textContent = '-';
             powfn();
         } else if (operator === '!'){
             operator = '-';
+            sign.textContent = '-';
             factorialfn();    
         }
     
@@ -199,18 +209,23 @@ divide.addEventListener('click', function() {
         divfn();
         } else if(operator === '-'){
             operator = '/';
+            sign.textContent = '/';
             minusfn();
         } else if(operator === '*'){
             operator = "/";
+            sign.textContent = '/';
             mulfn();
         } else if (operator === '+'){
             operator = '/';
+            sign.textContent = '/';
             plusfn();
         } else if (operator === '^'){
             operator = '/';
+            sign.textContent = '/';
             powfn();
         } else if (operator === '!'){
             operator = '/';
+            sign.textContent = '/';
             factorialfn();    
         }
     
@@ -225,18 +240,23 @@ multiply.addEventListener('click', function() {
         mulfn();
         } else if(operator === '-'){
             operator = '*';
+            sign.textContent = '*';
             minusfn();
         } else if(operator === '+'){
             operator = "*";
+            sign.textContent = '*';
             plusfn();
         } else if (operator === '/'){
             operator = '*';
+            sign.textContent = '*';
             divfn();
         } else if (operator === '^'){
             operator = '*';
+            sign.textContent = '*';
             powfn();
         } else if (operator === '!'){
             operator = '*';
+            sign.textContent = '*';
             factorialfn();    
         }
     
@@ -253,18 +273,23 @@ power.addEventListener('click', function() {
         powfn();
         } else if(operator === '-'){
             operator = '^';
+            sign.textContent = '^';
             minusfn();
         } else if(operator === '*'){
             operator = "^";
+            sign.textContent = '^';
             mulfn();
         } else if (operator === '/'){
             operator = '^';
+            sign.textContent = '^';
             divfn();
         } else if (operator === '+'){
             operator = '^';
+            sign.textContent = '^';
             plusfn();
         } else if (operator === '!'){
             operator = '^';
+            sign.textContent = '^';
             factorialfn();    
         }
     
@@ -279,18 +304,23 @@ factorial.addEventListener('click', function() {
         factorialfn();
         } else if(operator === '-'){
             operator = '!';
+            sign.textContent = '!';
             minusfn();
         } else if(operator === '*'){
             operator = "!";
+            sign.textContent = '!';
             mulfn();
         } else if (operator === '/'){
             operator = '!';
+            sign.textContent = '!';
             divfn();
         } else if (operator === '^'){
             operator = '!';
+            sign.textContent = '!';
             powfn();
         } else if (operator === '+'){
             operator = '!';
+            sign.textContent = '!';
             plusfn();    
         }
     
@@ -316,6 +346,7 @@ equal.addEventListener('click', function() {
     valueone = 0;
     valuetwo = 0;
     operator = 0; 
+    sign.textContent = '';
     }
 });
 
@@ -325,8 +356,10 @@ clear.addEventListener('click', function() {
 
 allclear.addEventListener('click', function() {
     display.textContent = '';
+    sign.textContent = '';
     valueone = 0;
     valuetwo = 0;
+    operator = 0;
 });
 
 
@@ -409,3 +442,5 @@ function factorialvalue() {
 }
 
 
+
+// end
